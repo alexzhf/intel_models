@@ -53,7 +53,7 @@ fi
 
 rm -rf ${OUTPUT_DIR}/latency_log*
 export OMP_NUM_THREADS=4
-CORES=`lscpu | grep Core | awk '{print $4}'`
+CORES=`lscpu | grep 'Core(s)' | awk '{print $4}'`
 SOCKETS=`lscpu | grep Socket | awk '{print $2}'`
 INT8_CONFIG=${INT8_CONFIG:-"configure.json"}
 BATCH_SIZE=${BATCH_SIZE:-1}
